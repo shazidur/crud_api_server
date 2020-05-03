@@ -1,0 +1,26 @@
+{
+  "name": "simplecrud",
+  "version": "1.0.0",
+  "description": "A CRUD Application using NodeJS, Express, MongoDB, JavasScript, ReactJS",
+  "main": "index.js",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.9.11",
+    "nodemon": "^2.0.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shazidur/simpleCRUD.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shazidur/simpleCRUD/issues"
+  },
+  "homepage": "https://github.com/shazidur/simpleCRUD#readme"
+}

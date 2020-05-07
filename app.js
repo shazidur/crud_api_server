@@ -25,6 +25,19 @@ function validateCourse(val) {
     return Joi.validate(val, schema)
 }
 
+// //Import router
+const postsRoute = require('./routes/posts')
+app.use('/api/posts', postsRoute)
+
+// //Connect DB
+mongoose.connect( 
+    process.env.DB_CONNECTION,
+    { useNewUrlParser: true, useUnifiedTopology: true }
+)
+.then(() => {
+    console.log(' Db Connect....')
+})
+
 
 //  GET Request ~~~~~~~~~~~~~~~~~~~~~~~
 app.get('/', (req, res) => {
@@ -94,31 +107,10 @@ app.delete('/api/courses/:id', (req, res) => {
     res.send(course)
 })
 
-
-// //Import router
-// const postsRoute = require('./routes/posts')
-// app.use('/posts', postsRoute)
+//          __         ||||||||          __         ||||||
 
 
-// //Middleware
-// app.use(bodyParser.urlencoded({ extended: false }));
 
-// app.use(bodyParser.json());
-// app.use(cookieParser());
-
-
-// // Routes 
-// app.get('/', (req, res) => {
-//     res.send('we are from the Node Home')
-// })
-
-
-// //Connect DB
-// mongoose.connect( 
-//     process.env.DB_CONNECTION,
-//     { useNewUrlParser: true, useUnifiedTopology: true },
-//     () => console.log(' Db Connect....')
-// )
 
 
 // lestening to the server
